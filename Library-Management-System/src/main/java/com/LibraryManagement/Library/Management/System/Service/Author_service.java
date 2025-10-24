@@ -25,9 +25,6 @@ public class Author_service {
     @Autowired
     private Author_dao authorDao;
 
-    @Autowired
-    private Books_dao booksdao;
-
     public AuthorDTO addAuthor(AuthorDTO authorDTO) {
         System.out.println("Received DTO: " + authorDTO);
 
@@ -39,7 +36,7 @@ public class Author_service {
                     Books book = new Books();
                     book.setBookTitle(title);
                     book.setStock(10L);
-                    book.setAuthors(author); // set the owning side
+                    book.setAuthors(author);
                     return book;
                 })
                 .collect(Collectors.toSet());
@@ -63,7 +60,7 @@ public class Author_service {
         return authorDao.findAll()
                 .stream()
                 .map(author -> {
-                    Set<String> bookTitles = author.getBooks() // Get book titles first
+                    Set<String> bookTitles = author.getBooks()
                             .stream()
                             .map(Books::getBookTitle)
                             .collect(Collectors.toSet());
@@ -75,4 +72,3 @@ public class Author_service {
     }
 
 }
-
