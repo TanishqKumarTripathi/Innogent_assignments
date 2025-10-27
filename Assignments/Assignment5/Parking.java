@@ -43,8 +43,9 @@ public class Parking {
         for (int i = 1; i <= 10; i++) {
             Thread.sleep(500);
             Car cars = new Car(parks, "Carname" + i);
-            cars.run();
+            cars.start();
         }
 
     }
 }
+
