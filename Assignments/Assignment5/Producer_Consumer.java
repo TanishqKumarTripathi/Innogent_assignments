@@ -45,7 +45,7 @@ class pc_class {
                     wait();
                 }
 
-                int val = al.removeFirst();
+                int val = al.remove();
                 System.out.println(Thread.currentThread().getName() + "consumed: " + val);
                 notify();
 
@@ -104,4 +104,5 @@ public class Producer_Consumer {
         t2.start();
     }
 }
+
 
