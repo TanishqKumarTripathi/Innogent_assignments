@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class alvsll {
+public class ArrayListvsLinkedList{
 
     public static long arraylist(ArrayList<Integer> al, int n) {
 
@@ -103,3 +103,4 @@ public class alvsll {
         }
     }
 }
+
