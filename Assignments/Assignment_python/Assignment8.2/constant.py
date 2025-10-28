@@ -1,0 +1,1 @@
+LOW_STOCK=10
