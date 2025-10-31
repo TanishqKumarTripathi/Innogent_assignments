@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id        Int       @id @default(autoincrement())
+  name     String    @unique
+  products Product[] @relation("CompanyProducts") // Name the relation
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  products Product[] @relation("CategoryProducts")
+}
+
+model Product {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float
+
+  companyId   Int
+  company     Company   @relation("CompanyProducts", fields: [companyId], references: [id])
+
+  categoryId  Int?
+  category    Category? @relation("CategoryProducts", fields: [categoryId], references: [id])
+}
