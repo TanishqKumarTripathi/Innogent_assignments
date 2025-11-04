@@ -1,0 +1,15 @@
+body {
+  background-color: #121212; /* dark background */
+  color: #f1f1f1;
+}
+
+.card {
+  background-color: #1e1e1e; /* darker card */
+  color: #f1f1f1;
+}
+
+.error-msg {
+  color: #ff4d4f;
+  font-weight: bold;
+  margin-left: 10px;
+}
